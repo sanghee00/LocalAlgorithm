@@ -1,11 +1,16 @@
 package dfs.Day250305;
 
-import javax.naming.PartialResultException;
-import javax.swing.*;
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Day01_탈출 {
+// 처음부터 이상하게 접근해서 돌아가지 않는 코드입니다.
+// 일단 남겨두겠습니다.
+
 
     static int[] dx = {-1, 1, 0, 0};
     static int[] dy = {0, 0, -1, 1};
@@ -53,13 +58,13 @@ public class Day01_탈출 {
                         System.out.println(animal[yy][xx]);
 
                         for (int j = 0; j < 4; j++) {
-                            int xxx = dx[i] + animal[yy][xx].x;
-                            int yyy = dy[i] + animal[yy][xx].y;
+                            int xxx = dx[j] + animal[yy][xx].x;
+                            int yyy = dy[j] + animal[yy][xx].y;
 
                             if (xxx >= 0 && yyy >= 0 && yyy < r && xxx < c) {
                                 System.out.println("dsfadsf  " + animal[yyy][xxx]);
                                 if ((xxx == endNode.x) && (yyy == endNode.y)) {
-                                    result = animal[yy][xx].cnt;
+                                    result = animal[yy][xx].cnt + 1;
                                     break;
                                 }
                             }
@@ -153,11 +158,11 @@ public class Day01_탈출 {
         for (Node[] s : table1) {
             System.out.println(Arrays.toString(s));
         }
-
-        System.out.println("animal");
+        System.out.println("---------------------------");
         for (Node[] s : table2) {
             System.out.println(Arrays.toString(s));
         }
+
 
         System.out.println(result);
 

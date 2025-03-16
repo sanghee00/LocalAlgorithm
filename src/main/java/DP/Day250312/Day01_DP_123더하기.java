@@ -38,7 +38,7 @@ dp[N] = ( ) -> dp[N - 1] + dp[N - 2] + dp[N - 3]
 
 import java.io.*;
 
-public class DP_123_더하기 {
+public class Day01_DP_123더하기 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int T = Integer.parseInt(br.readLine());
